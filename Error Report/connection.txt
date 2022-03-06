@@ -1,0 +1,8 @@
+ ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+ Exception in callback BaseSelectorEventLoop._read_from_self()
+ handle: <Handle BaseSelectorEventLoop._read_from_self()>
+ Traceback (most recent call last):
+   File "C:\Users\Windows 10\anaconda\envs\kivy\lib\asyncio\events.py", line 88, in _run
+     self._context.run(self._callback, *self._args)
+   File "C:\Users\Windows 10\anaconda\envs\kivy\lib\asyncio\selector_events.py", line 119, in _read_from_self
+     data = self._ssock.recv(4096)

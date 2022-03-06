@@ -1,0 +1,122 @@
+
+WindowManager:
+    MainWindow:
+    LanguageWindow:
+    TextWindow:
+    PhotoWindow:
+    ResultWindow:
+
+<MainWindow>:
+    name: "main"
+
+    BoxLayout:
+        orientation: "vertical"
+
+        Button:
+            text: "LANGUAGE"
+            size_hint : .2, .2
+            pos_hint : {"x": .8}
+            font_size : 18
+            on_release:
+                app.root.current = "language"
+                root.manager.transition.direction = "left"
+
+        Label:
+            text: "NS TOURIST GUIDE\n           APP"
+
+        Label:
+            text: "HOW DO YOU WANNA FIND INFO?"
+
+        Button:
+            text: "PHOTO"
+            on_release:
+                app.root.current = "photo"
+                root.manager.transition.direction = "left"
+
+        Button:
+            text: "TEXT"
+            on_release:
+                app.root.current = "text"
+                root.manager.transition.direction = "left"
+
+
+<LanguageWindow>:
+    name: "language"
+
+    BoxLayout:
+        orientation: "vertical"
+        Button:
+            text: "ENG"
+
+        Button:
+            text: "KAZ"
+
+        Button:
+            text: "RUS"
+
+        Button:
+            text: "TUR"
+
+        Button:
+            text: "back"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+
+
+<TextWindow>:
+    name: "text"
+
+    Button:
+        text: "back"
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "right"
+
+<PhotoWindow>:
+    name: "photo"
+
+    BoxLayout:
+        orientation: "vertical"
+        
+        ToggleButton:
+            text: 'Choose from directory'
+            size_hint_y: None
+            height: '48dp'
+            
+        Button:
+            text: 'Play'
+            size_hint_y: None
+            height: '48dp'
+            on_press: root.capture()
+
+        Button:
+            text: "back"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+<ResultWindow>:
+    name: "result"
+    BoxLayout:
+        orientation: "vertical"
+
+       
+        Label:
+            text: "Is your photo sinilar to the photo bellow?\n"
+            
+            
+        Button:
+            text: 'Yes'
+            on_release:
+                app.root.current = "photo"
+                root.manager.transition.direction = "right"
+            
+
+        Button:
+            text: "No"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
