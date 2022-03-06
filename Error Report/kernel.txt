@@ -1,0 +1,14 @@
+An error ocurred while starting the kernel
+[ WARN:1] global D:\a\opencv‑python\opencv‑python\opencv\modules\videoio\src\cap_msmf.cpp (376) `anonymous‑namespace'::SourceReaderCB::OnReadSample videoio(MSMF): OnReadSample() is called with error status: �
+[ WARN:1] global D:\a\opencv‑python\opencv‑python\opencv\modules\videoio\src\cap_msmf.cpp (388) `anonymous‑namespace'::SourceReaderCB::OnReadSample videoio(MSMF): async ReadSample() call is failed with error status: �
+[ WARN:2] global D:\a\opencv‑python\opencv‑python\opencv\modules\videoio\src\cap_msmf.cpp (376) `anonymous‑namespace'::SourceReaderCB::OnReadSample videoio(MSMF): OnReadSample() is called with error status: �
+[ WARN:2] global D:\a\opencv‑python\opencv‑python\opencv\modules\videoio\src\cap_msmf.cpp (388) `anonymous‑namespace'::SourceReaderCB::OnReadSample videoio(MSMF): async ReadSample() call is failed with error status: �
+[ WARN:3] global D:\a\opencv‑python\opencv‑python\opencv\modules\videoio\src\cap_msmf.cpp (376) `anonymous‑namespace'::SourceReaderCB::OnReadSample videoio(MSMF): OnReadSample() is called with error status: �
+[ WARN:3] global D:\a\opencv‑python\opencv‑python\opencv\modules\videoio\src\cap_msmf.cpp (388) `anonymous‑namespace'::SourceReaderCB::OnReadSample videoio(MSMF): async ReadSample() call is failed with error status: �
+[ WARN:1] global D:\a\opencv‑python\opencv‑python\opencv\modules\videoio\src\cap_msmf.cpp (376) `anonymous‑namespace'::SourceReaderCB::OnReadSample videoio(MSMF): OnReadSample() is called with error status: �
+[ WARN:1] global D:\a\opencv‑python\opencv‑python\opencv\modules\videoio\src\cap_msmf.cpp (388) `anonymous‑namespace'::SourceReaderCB::OnReadSample videoio(MSMF): async ReadSample() call is failed with error status: �
+[ WARN:2] global D:\a\opencv‑python\opencv‑python\opencv\modules\videoio\src\cap_msmf.cpp (376) `anonymous‑namespace'::SourceReaderCB::OnReadSample videoio(MSMF): OnReadSample() is called with error status: �
+[ WARN:2] global D:\a\opencv‑python\opencv‑python\opencv\modules\videoio\src\cap_msmf.cpp (388) `anonymous‑namespace'::SourceReaderCB::OnReadSample videoio(MSMF): async ReadSample() call is failed with error status: �
+[ WARN:0] global D:\a\opencv‑python\opencv‑python\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous‑namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+[ WARN:0] global D:\a\opencv‑python\opencv‑python\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous‑namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+[ WARN:0] global D:\a\opencv‑python\opencv‑python\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous‑namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
