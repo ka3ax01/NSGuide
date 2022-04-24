@@ -1,0 +1,383 @@
+WindowManager:
+    MainWindow:
+    LanguageWindow:
+    TextWindow:
+    PhotoWindow:
+        id: entry
+    PhotoConfirmationWindow:
+    TextConfirmationWindow:
+    InformationWindow:
+    
+<MainWindow@widget>:
+    name: "main"
+    canvas.before:
+        Rectangle:
+            source: "dsn/background.JPG"
+            pos: self.pos
+            size: self.size
+            
+    MDBoxLayout:
+        orientation: "vertical"
+
+        Button:
+            text: "LANGUAGE"
+            size_hint : .2, .2
+            pos_hint : {"x": .8}
+            background_color: "#6495ED"
+            background_normal: ""
+            bold: True
+            #font_size : 18
+            #border: (10,16,16,10)
+            on_release:
+                app.root.current = "language"
+                root.manager.transition.direction = "left"
+
+        #MDLabel:
+        #    halign: "center"
+        #    text: "NS TOURIST GUIDE APP"
+        
+        Image:
+            source: "dsn/logo4.png"
+            halign: "center"
+            
+        Image:
+            source: "dsn/howinfo2.png"
+            halign: "center"
+
+        #MDLabel:
+        #    halign: "center"
+        #    text: "HOW DO YOU WANNA FIND INFO?"
+            
+        
+
+        Button:
+            text: "PHOTO"
+            background_color: "#6495ED"
+            background_normal: ""
+            size_hint: (0.8, 0.5)
+            pos_hint : {"x": .1}
+            bold: True
+            border: (10,16,16,10)
+            #spacing: 100
+            #padding: 10, 10spacing: 100
+            
+            
+            on_release:
+                app.root.current = "photo"
+                root.manager.transition.direction = "left"
+                
+        Button:
+            text: "TEXT"
+            
+            background_color: "#6495ED"
+            background_normal: ""
+            size_hint: (0.8, 0.5)
+            pos_hint : {"x": .1}
+            bold: True
+            border_color: "black"
+            border_size: 2
+            #spacing: 100
+            #padding: 10, 10
+            
+            on_release:
+                app.root.current = "text"
+                root.manager.transition.direction = "right"
+            
+<LanguageWindow@widget>:
+    name: "language"
+    
+
+    MDBoxLayout:
+        orientation: "vertical"
+        Button:
+            text: "ENG"
+            background_color: "#6495ED"
+            background_normal: ""
+            size_hint: (0.8, 0.5)
+            pos_hint : {"x": .1}
+            bold: True
+            border_color: "black"
+            border_size: 2
+
+        Button:
+            text: "KAZ"
+            background_color: "#6495ED"
+            background_normal: ""
+            size_hint: (0.8, 0.5)
+            pos_hint : {"x": .1}
+            bold: True
+            border_color: "black"
+            border_size: 2
+
+        Button:
+            text: "RUS"
+            background_color: "#6495ED"
+            background_normal: ""
+            size_hint: (0.8, 0.5)
+            pos_hint : {"x": .1}
+            bold: True
+            border_color: "black"
+            border_size: 2
+
+        Button:
+            text: "TUR"
+            background_color: "#6495ED"
+            background_normal: ""
+            size_hint: (0.8, 0.5)
+            pos_hint : {"x": .1}
+            bold: True
+            border_color: "black"
+            border_size: 2
+
+        Button:
+            text: "back"
+            background_color: "#6495ED"
+            background_normal: ""
+            size_hint: (0.8, 0.5)
+            pos_hint : {"x": .1}
+            bold: True
+            border_color: "black"
+            border_size: 2
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+
+
+<TextWindow@widget>:
+    name: "text"
+    
+    
+    TextInput:
+        text: "Enter Here"
+        multiline: False
+    MDBoxLayout:
+        orientation: "vertical"
+        Button:
+            text: "submit"
+            background_color: "#6495ED"
+            background_normal: ""
+            
+            bold: True
+            border_color: "black"
+            border_size: 2
+            on_release:
+                app.root.current = "textconf"
+                root.manager.transition.direction = "right"
+        Button:
+            text: "back"
+            background_color: "#6495ED"
+            background_normal: ""
+            
+            bold: True
+            border_color: "black"
+            border_size: 2
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+                
+<PhotoWindow@widget>:
+    name: "photo"
+    canvas.before:
+        Rectangle:
+            source: "dsn/background.JPG"
+            pos: self.pos
+            size: self.size
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        Camera:
+            id: camera
+            resolution: (640, 480)
+            play: False
+           
+        ToggleButton:
+            text: 'Play'
+            on_press: camera.play = not camera.play
+            size_hint_y: None
+            height: '48dp'
+            
+            background_color: "#6495ED"
+            background_normal: ""
+            size_hint: (0.8, 0.5)
+            pos_hint : {"x": .1}
+            bold: True
+            border_color: "black"
+            border_size: 5
+            
+        Button:
+            text: 'Capture'
+            background_color: "#6495ED"
+            background_normal: ""
+            size_hint: (0.8, 0.5)
+            pos_hint : {"x": .1}
+            bold: True
+            border_color: "white"
+            border_size: 5
+            size_hint_y: None
+            height: '48dp'
+            on_press: root.capture()
+            on_release:
+                app.root.current = "photoconf"
+                root.manager.transition.direction = "right"
+            
+       
+                
+        Button:
+            text: "back"
+            background_color: "#6495ED"
+            background_normal: ""
+            size_hint: (0.8, 0.5)
+            pos_hint : {"x": .1}
+            bold: True
+            border_color: "white"
+            border_size: 5
+            
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+                
+<PhotoConfirmationWindow@widget>:
+    name: "photoconf"
+    canvas.before:
+        Rectangle:
+            source: "dsn/background.JPG"
+            pos: self.pos
+            size: self.size
+    MDBoxLayout:
+        orientation: "vertical"
+        MDLabel:
+            halign: "center"
+            text: "Is your photo similar?"
+        Image:
+            id: img
+            #source: app.image 
+           
+        Button:
+            text:"Yes"
+            background_color: "#6495ED"
+            background_normal: ""
+            size_hint: (0.8, 0.5)
+            pos_hint : {"x": .1}
+            bold: True
+            border_color: "white"
+            border_size: 5
+            
+            on_release:
+                app.root.current = "info"
+                root.manager.transition.direction = "left"
+
+        Button:
+            text: "No"
+                
+            background_color: "#6495ED"
+            background_normal: ""
+            size_hint: (0.8, 0.5)
+            pos_hint : {"x": .1}
+            bold: True
+            border_color: "white"
+            border_size: 5
+            
+            on_release:
+                app.root.current = "photo"
+                root.manager.transition.direction = "right"
+                
+<TextConfirmationWindow@widget>:
+    name: "textconf"
+
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDLabel:
+            halign: "center"
+            text: "Are you looking for this building?"
+        BoxLayout:
+            orientation: "horizontal"
+            Button:
+                text: "Yes"
+                background_color: "#6495ED"
+                background_normal: ""
+                size_hint: (0.8, 0.5)
+                pos_hint : {"x": .1}
+                bold: True
+                border_color: "white"
+                border_size: 5
+            
+                on_release:
+                    app.root.current = "info"
+                    root.manager.transition.direction = "right"
+
+            Button:
+                text:"No"
+                
+                background_color: "#6495ED"
+                background_normal: ""
+                size_hint: (0.8, 0.5)
+                pos_hint : {"x": .1}
+                bold: True
+                border_color: "white"
+                border_size: 5
+            
+                on_release:
+                    app.root.current = "text"
+                    root.manager.transition.direction = "left"
+
+
+<InformationWindow@widget>:
+    name: "info"
+    canvas.before:
+        Rectangle:
+            source: "dsn/background.JPG"
+            pos: self.pos
+            size: self.size
+            
+    MDBoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            orientation: "horizontal"
+           #MDLabel:
+           #    #text:
+           #    #id: txts
+           #    #text: root.manager.txts
+           #    halign: "center"
+           #    size_hint_y: 0.8
+           #    
+           #    text_size: self.width, None
+           #    height: self.texture_size[1]
+           #    background_color: (1,1,1,1)
+           #    text: app.text
+           #    canvas.before:
+           #        Color:
+           #            rgba: self.background_color
+           #        Rectangle:
+           #            pos: self.pos
+           #            size: self.size
+            Image:
+                id: img
+                #source: app.image
+                
+            Image:
+                id: txts
+                #canvas.before:
+                #   Color:
+                #       rgba: self.background_color
+                #   Rectangle:
+                #       pos: self.pos
+                #       size: self.size
+        Button:
+            text: "go to main"
+            
+            background_color: "#6495ED"
+            background_normal: ""
+            size_hint: (0.8, 0.5)
+            pos_hint : {"x": .1}
+            bold: True
+            border_color: "white"
+            border_size: 5
+            
+            
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
